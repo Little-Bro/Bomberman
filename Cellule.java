@@ -50,8 +50,6 @@ public class Cellule
                 g.setColor(new Color(0,204,0));
                 g.fillRect(x,y,larg,larg);
                 g.drawImage(bombe,x+10,y+10,fen);
-                //g.setColor(Color.black);
-                //g.fillOval(x+10,y+10,30,30);
             }
 
             else 
@@ -59,8 +57,6 @@ public class Cellule
                 g.setColor(new Color(0,153,0));
                 g.fillRect(x,y,larg,larg);
                 g.drawImage(bombe,x+10,y+10,fen);
-                //g.setColor(Color.black);
-                //g.fillOval(x+10,y+10,30,30);
             }            
         }
                     
@@ -89,8 +85,6 @@ public class Cellule
         else if (symb == "t")
         {
             g.drawImage(terre, x,y, fen);
-            //g.setColor(new Color(150,80,0));
-            //g.fillRect(x,y,larg,larg);
         }
     }
 }

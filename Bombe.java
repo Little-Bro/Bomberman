@@ -22,8 +22,6 @@ public class Bombe
     public void dessine(Graphics g, FenetreJeu fen)
     {
         g.drawImage(bombe,x,y,fen);
-        //g.setColor(Color.black);
-        //g.fillOval(x,y,larg,larg);
     }
 
     public void ticTac()
