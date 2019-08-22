@@ -9,16 +9,11 @@ import sun.audio.*;
 public class FenetreJeu extends JFrame implements KeyListener, ActionListener
 {
     //initialisation du plateau
-<<<<<<< HEAD
     // 0 : rien, # : mur, o : explosion, t : terre, b : bombe
-=======
-    // # : mur, o : explosion, t : terre, b : bombe
->>>>>>> 576c437943b296b973a3debcc3501572de894b84
     String[][] plateau = {
     {"0","0","0","t","0","0","0","0","0","0","0","0","0"},
     {"0","#","t","#","0","#","0","#","0","#","0","#","0"},
     {"t","t","t","t","0","0","0","0","0","0","0","0","0"},
-<<<<<<< HEAD
     {"t","#","t","#","0","#","0","#","0","#","0","#","0"},
     {"0","0","0","0","0","0","0","0","0","0","0","0","0"},
     {"0","#","0","#","0","#","0","#","0","#","0","#","0"},
@@ -28,18 +23,6 @@ public class FenetreJeu extends JFrame implements KeyListener, ActionListener
     {"0","#","0","#","0","#","0","#","t","#","t","#","0"},
     {"0","0","0","0","0","0","0","0","t","t","0","0","0"}};
     
-=======
-    {"t","#","t","#","0","#","t","#","0","#","0","#","0"},
-    {"t","t","t","0","0","0","t","t","0","0","0","0","0"},
-    {"t","#","t","#","0","#","0","#","0","#","0","#","0"},
-    {"t","t","t","t","0","0","0","0","0","0","0","0","0"},
-    {"t","#","t","#","0","#","0","#","0","#","0","#","0"},
-    {"t","t","t","t","0","0","0","0","0","0","0","0","0"},
-    {"0","#","t","#","0","#","0","#","0","#","0","#","0"},
-    {"0","0","0","t","0","0","0","0","0","0","0","0","0"}};
-    
-    //Image  mur= Toolkit.getDefaultToolkit().getImage("mur.png");
->>>>>>> 576c437943b296b973a3debcc3501572de894b84
     ArrayList<Joueur> listeJoueurs; 
     Cellule liste[][];
     Joueur j1, j2;
@@ -166,22 +149,14 @@ public class FenetreJeu extends JFrame implements KeyListener, ActionListener
         {
             for (int j=0; j<13;j++)
             {
-<<<<<<< HEAD
                 liste[i][j].dessine(g, this);
-=======
-                liste[i][j].dessine(g);
->>>>>>> 576c437943b296b973a3debcc3501572de894b84
             }
         }
 
         //affichage des joueurs
         for (int i = 0; i<listeJoueurs.size(); i++)
         {
-<<<<<<< HEAD
             listeJoueurs.get(i).dessine(g, this);
-=======
-            listeJoueurs.get(i).dessine(g);
->>>>>>> 576c437943b296b973a3debcc3501572de894b84
         }
 
         //affichage des bombes
@@ -189,11 +164,7 @@ public class FenetreJeu extends JFrame implements KeyListener, ActionListener
         {
             for (Bombe b : listeJoueurs.get(i).listeBombes)
             {
-<<<<<<< HEAD
                 b.dessine(g, this);
-=======
-                b.dessine(g);
->>>>>>> 576c437943b296b973a3debcc3501572de894b84
             }
         }
     }

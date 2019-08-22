@@ -6,11 +6,7 @@ public class Bombe
     int colonne, ligne;
     int larg;
     int chrono;
-<<<<<<< HEAD
     Image bombe;
-=======
-    
->>>>>>> 576c437943b296b973a3debcc3501572de894b84
 
     public Bombe(int x, int y)
     {
@@ -20,7 +16,6 @@ public class Bombe
         chrono = 0;
         colonne = ((x+larg/2)/50)-1;
         ligne = ((y+larg/2)/50)-1;
-<<<<<<< HEAD
         bombe = Toolkit.getDefaultToolkit().getImage("bombe.png");
     }
 
@@ -29,14 +24,6 @@ public class Bombe
         g.drawImage(bombe,x,y,fen);
         //g.setColor(Color.black);
         //g.fillOval(x,y,larg,larg);
-=======
-    }
-
-    public void dessine(Graphics g)
-    {
-        g.setColor(Color.black);
-        g.fillOval(x,y,larg,larg);
->>>>>>> 576c437943b296b973a3debcc3501572de894b84
     }
 
     public void ticTac()
