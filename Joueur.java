@@ -13,7 +13,10 @@ public class Joueur
     public LinkedList<Bombe> listeBombes;
     enum direction {HAUT, BAS, GAUCHE, DROITE};
     direction dir;
+<<<<<<< HEAD
     Image perso1, perso2;
+=======
+>>>>>>> 576c437943b296b973a3debcc3501572de894b84
 
     public Joueur(int x, int y, int numero)
     {
@@ -23,12 +26,19 @@ public class Joueur
         xdir = 0;
         ydir = 0;
         vitesse = 3;
+<<<<<<< HEAD
         larg = 30;
         peutPoser = true;
         dir = direction.BAS;
         listeBombes = new LinkedList<Bombe>();
         perso1 = Toolkit.getDefaultToolkit().getImage("perso1.png");
         perso2 = Toolkit.getDefaultToolkit().getImage("perso2.png");
+=======
+        larg = 20;
+        peutPoser = true;
+        dir = direction.BAS;
+        listeBombes = new LinkedList<Bombe>();
+>>>>>>> 576c437943b296b973a3debcc3501572de894b84
     }
     
     public void bouge()
@@ -51,12 +61,23 @@ public class Joueur
             y = 600 - larg;
     }
 
+<<<<<<< HEAD
     public void dessine(Graphics g, FenetreJeu fen)
     {
         if (numero == 1)
             g.drawImage(perso1, x, y, fen);
         else if (numero == 2)
             g.drawImage(perso2, x, y, fen);
+=======
+    public void dessine(Graphics g)
+    {
+        if (numero == 1)
+            g.setColor(Color.white);
+        else if (numero == 2)
+            g.setColor(Color.blue);
+
+        g.fillRect(x,y,larg,larg);
+>>>>>>> 576c437943b296b973a3debcc3501572de894b84
     }
 
     public void collision(Cellule liste[][])
