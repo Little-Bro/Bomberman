@@ -10,6 +10,8 @@ CONTROLES :
 
 CE QU'IL RESTE A FAIRE : 
 
+  double buffer pour éviter le "clignotement" des images 
+
   ajouter des power-ups
   
   ajouter des jolis sprites/sons
