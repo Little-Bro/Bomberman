@@ -61,7 +61,6 @@ public class Joueur
 
     public void collision(Cellule liste[][])
     {
-
         for (Bombe b : listeBombes)
         {
             if ((b.colonne != colonne || b.ligne != ligne) && b.chrono <= 100)
@@ -195,7 +194,6 @@ public class Joueur
     {
         if (liste[ligne][colonne].symb == "o")
         {
-            
             return true;
         }
 

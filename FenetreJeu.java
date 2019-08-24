@@ -11,17 +11,17 @@ public class FenetreJeu extends JFrame implements KeyListener, ActionListener
     //initialisation du plateau
     // 0 : rien, # : mur, o : explosion, t : terre, b : bombe
     String[][] plateau = {
-    {"0","0","0","t","0","0","0","0","0","0","0","0","0"},
-    {"0","#","t","#","0","#","0","#","0","#","0","#","0"},
-    {"t","t","t","t","0","0","0","0","0","0","0","0","0"},
-    {"t","#","t","#","0","#","0","#","0","#","0","#","0"},
     {"0","0","0","0","0","0","0","0","0","0","0","0","0"},
     {"0","#","0","#","0","#","0","#","0","#","0","#","0"},
     {"0","0","0","0","0","0","0","0","0","0","0","0","0"},
     {"0","#","0","#","0","#","0","#","0","#","0","#","0"},
-    {"0","0","0","0","0","0","0","0","0","t","t","t","t"},
-    {"0","#","0","#","0","#","0","#","t","#","t","#","0"},
-    {"0","0","0","0","0","0","0","0","t","t","0","0","0"}};
+    {"0","0","0","0","0","0","0","0","0","0","0","0","0"},
+    {"0","#","0","#","0","#","0","#","0","#","0","#","0"},
+    {"0","0","0","0","0","0","0","0","0","0","0","0","0"},
+    {"0","#","0","#","0","#","0","#","0","#","0","#","0"},
+    {"0","0","0","0","0","0","0","0","0","0","0","0","0"},
+    {"0","#","0","#","0","#","0","#","0","#","0","#","0"},
+    {"0","0","0","0","0","0","0","0","0","0","0","0","0"}};
     
     ArrayList<Joueur> listeJoueurs; 
     Cellule liste[][];
@@ -58,6 +58,33 @@ public class FenetreJeu extends JFrame implements KeyListener, ActionListener
             }
         }
 
+        //initialisation du terrain
+        //définition des cases interdites (joueurs + alentours direct)
+        liste[1][0].interditTerre = true;
+        liste[9][12].interditTerre = true;
+        for (int i=0; i<=2; i++)
+        {
+            liste[0][i].interditTerre = true;
+            liste[10][10+i].interditTerre = true;
+        }
+
+        for (int i=0; i<11; i++)
+        {
+            for (int j=0; j<13;j++)
+            {
+                double rng = Math.random();
+                if (liste[i][j].symb != "#")
+                {
+                    if (liste[i][j].interditTerre)
+                        continue;
+                    if (rng < 0.5)
+                    {
+                        liste[i][j].symb = "t";
+                    }
+                }
+            }
+        }      
+        
         //initialisation du chrono
         tic = new Timer(1000/60,this);
         tic.start();
@@ -203,22 +230,22 @@ public class FenetreJeu extends JFrame implements KeyListener, ActionListener
                     break;
 
                 //JOUEUR 2
-                case 90:
+                case 90: //Z
                 j2.dir = j2.dir.HAUT;
                 j2.ydir = -1;
                 j2.xdir = 0;
                     break;     
-                case 83:
+                case 83: //S
                 j2.dir = j2.dir.BAS;
                 j2.ydir = 1;
                 j2.xdir = 0; 
                     break;
-                case 81:
+                case 81: //Q
                 j2.dir = j2.dir.GAUCHE;
                 j2.ydir = 0;
                 j2.xdir = -1;
                     break;    
-                case 68:
+                case 68: //D
                 j2.dir = j2.dir.DROITE;
                 j2.ydir = 0;
                 j2.xdir = 1;

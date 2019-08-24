@@ -6,6 +6,7 @@ public class Cellule
     int x,y;
     int larg;
     int tempsExplo;
+    boolean interditTerre;
     String symb;
     String[][] tab;
     Image  mur, terre, bombe;
@@ -17,6 +18,7 @@ public class Cellule
         this.i = i;
         this.j = j;
         this.tab = tab;
+        interditTerre = false;
         symb = tab[i][j];
         x = larg + j*larg;
         y = larg + i*larg;
