@@ -7,8 +7,6 @@ CE QU'IL RESTE A FAIRE :
   
   ajouter des jolis sprites/sons
   
-  générateur de terrain aléatoire
-  
   rendre le code plus joli/efficace (polymorphisme ?)
   
   rendre possible les contrôles à la manette Xbox (possible sur Linux ou seulement sur Windows ?)
