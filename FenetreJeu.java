@@ -27,6 +27,7 @@ public class FenetreJeu extends JFrame implements KeyListener, ActionListener
     Cellule liste[][];
     Joueur j1, j2;
     Timer tic;
+    FenetreDessin fenDessin;
     int optionJoueur, joueurGagnant, chronoAttente;
     boolean lanceChrono;
 
@@ -84,7 +85,10 @@ public class FenetreJeu extends JFrame implements KeyListener, ActionListener
                 }
             }
         }      
-        
+        //gestion de l'affichage
+        fenDessin = new FenetreDessin(listeJoueurs, liste, this);
+        add(fenDessin);
+
         //initialisation du chrono
         tic = new Timer(1000/60,this);
         tic.start();
@@ -164,37 +168,8 @@ public class FenetreJeu extends JFrame implements KeyListener, ActionListener
         {
             setVisible(false);
         }
-        
-        repaint();
+        fenDessin.repaint();
     } 
-
-    //affichage
-    public void paint(Graphics g)
-    {
-        //affichage du plateau
-        for (int i=0; i<11; i++)
-        {
-            for (int j=0; j<13;j++)
-            {
-                liste[i][j].dessine(g, this);
-            }
-        }
-
-        //affichage des joueurs
-        for (int i = 0; i<listeJoueurs.size(); i++)
-        {
-            listeJoueurs.get(i).dessine(g, this);
-        }
-
-        //affichage des bombes
-        for (int i = 0; i<listeJoueurs.size(); i++)
-        {
-            for (Bombe b : listeJoueurs.get(i).listeBombes)
-            {
-                b.dessine(g, this);
-            }
-        }
-    }
 
     public void keyPressed(KeyEvent e)
     {
