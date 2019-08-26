@@ -21,7 +21,6 @@ public class FenetreDessin extends JPanel
     @Override
     public void paintComponent(Graphics g)
     {
-        //System.out.println("PAINT");
         super.paintComponent(g);
         //affichage du plateau
         for (int i=0; i<11; i++)

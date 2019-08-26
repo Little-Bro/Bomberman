@@ -13,7 +13,12 @@ public class Joueur
     public LinkedList<Bombe> listeBombes;
     enum direction {HAUT, BAS, GAUCHE, DROITE};
     direction dir;
-    Image perso1, perso2;
+    //joueur 1
+    Image perso1face, perso1gauche, perso1droite, perso1dos;
+    Image perso1d0, perso1d1, perso1f0, persof1, perso1g0, perso1g1;
+
+    //joueur 2 
+    Image perso2;
 
     public Joueur(int x, int y, int numero)
     {
@@ -27,7 +32,14 @@ public class Joueur
         peutPoser = true;
         dir = direction.BAS;
         listeBombes = new LinkedList<Bombe>();
-        perso1 = Toolkit.getDefaultToolkit().getImage("perso1.png");
+        //perso1 = Toolkit.getDefaultToolkit().getImage("perso1.png");
+
+
+        perso1face = Toolkit.getDefaultToolkit().getImage("perso1face.png");
+        perso1dos = Toolkit.getDefaultToolkit().getImage("perso1dos.png");
+        perso1gauche = Toolkit.getDefaultToolkit().getImage("perso1gauche.png");
+        perso1droite = Toolkit.getDefaultToolkit().getImage("perso1droite.png");
+
         perso2 = Toolkit.getDefaultToolkit().getImage("perso2.png");
     }
     
@@ -53,8 +65,29 @@ public class Joueur
 
     public void dessine(Graphics g, FenetreJeu fen)
     {
+        //joueur 1
         if (numero == 1)
-            g.drawImage(perso1, x, y, fen);
+        {
+            switch (dir)
+            {
+                case HAUT:
+                    g.drawImage(perso1dos,x,y,fen);
+                break;
+                case BAS:
+                    g.drawImage(perso1face,x,y,fen);
+                break;
+                case GAUCHE:
+                if (ydir == 0)
+                    g.drawImage(perso1gauche,x,y,fen);
+                break;
+                case DROITE:
+                    g.drawImage(perso1droite,x,y,fen);
+                break;
+            }
+        }
+            
+        
+        //joueur 2
         else if (numero == 2)
             g.drawImage(perso2, x, y, fen);
     }
