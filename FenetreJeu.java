@@ -123,7 +123,6 @@ public class FenetreJeu extends JFrame implements KeyListener, ActionListener
             }
         }
 
-
         //gestion des explosions
         for (int i=0; i<11; i++)
         {

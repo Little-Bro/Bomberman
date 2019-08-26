@@ -9,7 +9,7 @@ public class Cellule
     boolean interditTerre;
     String symb;
     String[][] tab;
-    Image  mur, terre, bombe;
+    Image  mur, terre, bombe, explosion;
 
     public Cellule(int i, int j,String[][] tab)
     {
@@ -25,6 +25,7 @@ public class Cellule
         mur = Toolkit.getDefaultToolkit().getImage("mur.png");
         terre = Toolkit.getDefaultToolkit().getImage("terre.png");
         bombe = Toolkit.getDefaultToolkit().getImage("bombe.png");
+        explosion = Toolkit.getDefaultToolkit().getImage("explosion.png");
     }
 
     public void dessine(Graphics g, FenetreJeu fen)
@@ -73,6 +74,7 @@ public class Cellule
             {
                 g.setColor(new Color(0,204,0));
                 g.fillRect(x,y,larg,larg);
+                g.drawImage(explosion,x+10,y+10,fen);
             }
 
             else 
@@ -81,7 +83,7 @@ public class Cellule
                 g.fillRect(x,y,larg,larg);
             }
             g.setColor(Color.red);
-            g.fillOval(x+10,y+10,30,30);
+            g.drawImage(explosion,x+10,y+10,fen);
         }
 
         else if (symb == "t")
