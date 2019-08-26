@@ -35,7 +35,7 @@ public class FenetreJeu extends JFrame implements KeyListener, ActionListener
     {
         setTitle("BOMBERMAN");
         setLocation(400,120);
-        setSize(750,650);
+        setSize(750,680);
 
         //paramètres initiaux
         lanceChrono = false;

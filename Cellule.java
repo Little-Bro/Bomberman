@@ -82,7 +82,7 @@ public class Cellule
                 g.setColor(new Color(0,153,0));
                 g.fillRect(x,y,larg,larg);
             }
-            g.setColor(Color.red);
+            g.setColor(Color.red); 
             g.drawImage(explosion,x+10,y+10,fen);
         }
 
