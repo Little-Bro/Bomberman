@@ -44,7 +44,7 @@ public class FenetreJeu extends JFrame implements KeyListener, ActionListener
 
         //initialisation de la liste de joueurs
         listeJoueurs = new ArrayList<Joueur>();
-        j1 = new Joueur(65,55,1);
+        j1 = new Joueur(50,55,1);
         j2 = new Joueur(664,563,2);
         listeJoueurs.add(j1);
         listeJoueurs.add(j2);

@@ -15,10 +15,11 @@ public class Joueur
     direction dir;
     //joueur 1
     Image perso1face, perso1gauche, perso1droite, perso1dos;
+    Image perso2face, perso2gauche, perso2droite, perso2dos;
     Image perso1d0, perso1d1, perso1f0, persof1, perso1g0, perso1g1;
 
     //joueur 2 
-    Image perso2;
+    //Image perso2;
 
     public Joueur(int x, int y, int numero)
     {
@@ -40,7 +41,10 @@ public class Joueur
         perso1gauche = Toolkit.getDefaultToolkit().getImage("perso1gauche.png");
         perso1droite = Toolkit.getDefaultToolkit().getImage("perso1droite.png");
 
-        perso2 = Toolkit.getDefaultToolkit().getImage("perso2.png");
+        perso2face = Toolkit.getDefaultToolkit().getImage("perso2face.png");
+        perso2dos = Toolkit.getDefaultToolkit().getImage("perso2dos.png");
+        perso2gauche = Toolkit.getDefaultToolkit().getImage("perso2gauche.png");
+        perso2droite = Toolkit.getDefaultToolkit().getImage("perso2droite.png");
     }
     
     public void bouge()
@@ -89,8 +93,26 @@ public class Joueur
         
         //joueur 2
         else if (numero == 2)
-            g.drawImage(perso2, x, y, fen);
+        {
+            switch (dir)
+            {
+                case HAUT:
+                    g.drawImage(perso2dos,x,y,fen);
+                break;
+                case BAS:
+                    g.drawImage(perso2face,x,y,fen);
+                break;
+                case GAUCHE:
+                if (ydir == 0)
+                    g.drawImage(perso2gauche,x,y,fen);
+                break;
+                case DROITE:
+                    g.drawImage(perso2droite,x,y,fen);
+                break;
+            }
+        }
     }
+    
 
     public void collision(Cellule liste[][])
     {
