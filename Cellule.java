@@ -20,7 +20,7 @@ public class Cellule
         this.tab = tab;
         interditTerre = false;
         symb = tab[i][j];
-        x =  larg + j*larg;
+        x = larg + j*larg;
         y = larg + i*larg;
         mur = Toolkit.getDefaultToolkit().getImage("mur.png");
         terre = Toolkit.getDefaultToolkit().getImage("terre.png");

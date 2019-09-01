@@ -13,13 +13,11 @@ public class Joueur
     public LinkedList<Bombe> listeBombes;
     enum direction {HAUT, BAS, GAUCHE, DROITE};
     direction dir;
+    
     //joueur 1
     Image perso1face, perso1gauche, perso1droite, perso1dos;
     Image perso2face, perso2gauche, perso2droite, perso2dos;
     Image perso1d0, perso1d1, perso1f0, persof1, perso1g0, perso1g1;
-
-    //joueur 2 
-    //Image perso2;
 
     public Joueur(int x, int y, int numero)
     {
@@ -33,14 +31,14 @@ public class Joueur
         peutPoser = true;
         dir = direction.BAS;
         listeBombes = new LinkedList<Bombe>();
-        //perso1 = Toolkit.getDefaultToolkit().getImage("perso1.png");
 
-
+        //images perso 1
         perso1face = Toolkit.getDefaultToolkit().getImage("perso1face.png");
         perso1dos = Toolkit.getDefaultToolkit().getImage("perso1dos.png");
         perso1gauche = Toolkit.getDefaultToolkit().getImage("perso1gauche.png");
         perso1droite = Toolkit.getDefaultToolkit().getImage("perso1droite.png");
 
+        //images perso 2
         perso2face = Toolkit.getDefaultToolkit().getImage("perso2face.png");
         perso2dos = Toolkit.getDefaultToolkit().getImage("perso2dos.png");
         perso2gauche = Toolkit.getDefaultToolkit().getImage("perso2gauche.png");
