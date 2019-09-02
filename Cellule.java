@@ -33,34 +33,13 @@ public class Cellule
         //sans bombe
         if (symb == "0")
         {
-            if (i%2 == j%2)
-            {
-                g.setColor(new Color(0,204,0));
-                g.fillRect(x,y,larg,larg);
-            }
-
-            else 
-            {
-                g.setColor(new Color(0,153,0));
-                g.fillRect(x,y,larg,larg);
-            }
+            dessineCadrillage(g);
         }
         //avec bombe
         if (symb == "b")
         {
-            if (i%2 == j%2)
-            {
-                g.setColor(new Color(0,204,0));
-                g.fillRect(x,y,larg,larg);
-                g.drawImage(bombe,x+10,y+10,fen);
-            }
-
-            else 
-            {
-                g.setColor(new Color(0,153,0));
-                g.fillRect(x,y,larg,larg);
-                g.drawImage(bombe,x+10,y+10,fen);
-            }            
+            dessineCadrillage(g);
+            g.drawImage(bombe,x+10,y+10,fen);                      
         }
                     
         else if (symb == "#")
@@ -90,5 +69,19 @@ public class Cellule
         {
             g.drawImage(terre, x,y, fen);
         }
+    }
+
+    public void dessineCadrillage(Graphics g)
+    {
+        if (i%2 == j%2)
+        {
+            g.setColor(new Color(0,204,0));
+            g.fillRect(x,y,larg,larg);
+        }
+        else 
+        {
+            g.setColor(new Color(0,153,0));
+            g.fillRect(x,y,larg,larg);
+        }       
     }
 }
