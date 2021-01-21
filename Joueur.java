@@ -28,7 +28,7 @@ public class Joueur {
         this.numero = numero;
         xdir = 0;
         ydir = 0;
-        vitesse = 3;
+        vitesse = 7;
         larg = 30;
         peutPoser = true;
         dir = direction.BAS;

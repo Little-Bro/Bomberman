@@ -1,10 +1,7 @@
 import javax.swing.*;
 import java.awt.event.*;
-import java.awt.*;
 import javax.swing.Timer;
 import java.util.*;
-import java.io.*;
-//import sun.audio.*;
 
 public class FenetreJeu extends JFrame implements KeyListener, ActionListener {
     // initialisation du plateau
@@ -88,7 +85,7 @@ public class FenetreJeu extends JFrame implements KeyListener, ActionListener {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-    // tic
+    // cette fonction s'execute à chaque frame
     public void actionPerformed(ActionEvent e) {
         if (lanceChrono)
             chronoAttente++;
