@@ -4,17 +4,24 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        {
-            "type": "java",
-            "name": "Debug (Launch) - Current File",
-            "request": "launch",
-            "mainClass": "${file}"
-        },
-        {
-            "type": "java",
-            "name": "Debug (Launch)-ClassePrincipale",
-            "request": "launch",
-            "mainClass": "ClassePrincipale"
-        }
+      {
+        "type": "java",
+        "name": "Launch ClassePrincipale",
+        "request": "launch",
+        "mainClass": "src.ClassePrincipale",
+        "projectName": "Bomberman_fdbaa91b"
+      },
+      {
+        "type": "java",
+        "name": "Debug (Launch) - Current File",
+        "request": "launch",
+        "mainClass": "${file}"
+      },
+      {
+        "type": "java",
+        "name": "Debug (Launch)-ClassePrincipale",
+        "request": "launch",
+        "mainClass": "ClassePrincipale"
+      }
     ]
 }
